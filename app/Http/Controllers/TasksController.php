@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Task;
 use App\Models\Sub_task;
 use DB;
+use Carbon;
 
 
 class TasksController extends Controller
@@ -17,16 +18,30 @@ class TasksController extends Controller
 
          $data = Task::OrderBy('due_date','asc');
          if($request->title!=""){
+
             $data->whereLike('title',$request->title);
+         }
+         if($request->due_date!=""){
+            if($request->due_date=="Today"){
+              $data->where('due_date', date('Y-m-d'));
+            }
+            // elseif($request->due_date=="This Week"){
+            //   $data->whereLike('due_date', [Carbon::now()->subWeek()->format("Y-m-d H:i:s"), Carbon::now()]);  
+            // }
+
+
+            //$data->whereLike('title',$request->title);
          }
         return $data->paginate(10);
     }
+
+
     public function get_sub_tasks(Request $request)
     {
         
-         $data = Sub_task::OrderBy('due_date','asc');
-         $data->where('task_id', $request->id);
-         return $data->paginate(10);
+        return $data = Sub_task::where('task_id', $request->id)->OrderBy('due_date','asc')
+         ->paginate(10);
+
      }
 
     public function create_task( Request $request)
