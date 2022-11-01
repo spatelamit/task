@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 01, 2022 at 01:02 PM
+-- Generation Time: Nov 01, 2022 at 01:58 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.0.23
 
@@ -44,12 +44,14 @@ CREATE TABLE `sub_tasks` (
 --
 
 INSERT INTO `sub_tasks` (`id`, `task_id`, `title`, `status`, `description`, `created_at`, `updated_at`, `due_date`, `deleted_at`) VALUES
-(1, 1, 'first task', 'Pending', 'dfj df test sasd', '2022-11-01 05:14:14', '2022-11-01 05:45:23', '2022-11-01', '2022-11-01 05:45:23'),
-(2, 1, 'first task', 'Pending', 'dfj df test sasd', '2022-11-01 05:41:58', '2022-11-01 05:41:58', '2022-11-01', '2022-11-01 05:21:27'),
-(3, 1, 'first task', 'Pending', 'dfj df test sasd', '2022-11-01 05:41:59', '2022-11-01 05:41:59', '2022-11-01', '2022-11-01 05:21:27'),
-(4, 13, 'first task', 'Pending', 'dfj df test sasd', '2022-11-01 05:42:00', '2022-11-01 05:42:00', '2022-11-01', '2022-11-01 05:21:27'),
-(5, 2, 'first task', 'Completed', 'dfj df test sasd', '2022-11-01 05:42:01', '2022-11-01 05:43:22', '2022-11-01', '2022-11-01 05:43:22'),
-(7, 2, 'first task', 'Completed', 'dfj df test sasd', '2022-11-01 05:42:02', '2022-11-01 05:42:02', '2022-11-01', NULL);
+(1, 1, 'first task', 'Completed', 'dfj df test sasd', '2022-11-01 05:14:14', '2022-11-01 06:43:26', '2022-11-01', NULL),
+(2, 1, 'first task', 'Pending', 'dfj df test sasd', '2022-11-01 05:41:58', '2022-11-01 05:41:58', '2022-11-01', NULL),
+(3, 1, 'first task', 'Pending', 'dfj df test sasd', '2022-11-01 05:41:59', '2022-11-01 05:41:59', '2022-11-01', NULL),
+(4, 13, 'first task', 'Pending', 'dfj df test sasd', '2022-11-01 05:42:00', '2022-11-01 05:42:00', '2022-11-01', NULL),
+(5, 2, 'first task', 'Completed', 'dfj df test sasd', '2022-11-01 05:42:01', '2022-11-01 05:43:22', '2022-11-01', NULL),
+(7, 2, 'first task', 'Completed', 'dfj df test sasd', '2022-11-01 05:42:02', '2022-11-01 05:42:02', '2022-11-01', NULL),
+(8, NULL, 'first task', 'Pending', 'dfj df test sasd', '2022-11-01 06:41:02', '2022-11-01 06:41:02', '2022-11-01', NULL),
+(9, NULL, 'my sub task', 'Pending', 'my sub task decription', '2022-11-01 06:41:25', '2022-11-01 06:41:25', '2022-11-01', NULL);
 
 -- --------------------------------------------------------
 
@@ -75,7 +77,8 @@ CREATE TABLE `tasks` (
 INSERT INTO `tasks` (`id`, `title`, `status`, `description`, `created_at`, `updated_at`, `due_date`, `deleted_at`) VALUES
 (2, 'first task', 'Completed', 'dfj df test sasd', '2022-11-01 05:13:53', '2022-11-01 05:57:37', '2022-11-01', '2022-11-01 05:19:57'),
 (3, 'first task', 'Pending', 'dfj df test sasd', '2022-11-01 05:32:19', '2022-11-01 05:32:55', '2022-11-01', '2022-11-01 05:32:55'),
-(4, 'first task', 'Pending', 'dfj df test sasd', '2022-11-01 05:32:21', '2022-11-01 05:32:21', '2022-11-01', NULL);
+(4, 'first task', 'Pending', 'dfj df test sasd', '2022-11-01 05:32:21', '2022-11-01 05:32:21', '2022-11-01', NULL),
+(5, 'My task title', 'Pending', 'my task title descitpion', '2022-11-01 06:40:18', '2022-11-01 06:40:18', '2022-11-01', NULL);
 
 --
 -- Indexes for dumped tables
@@ -102,13 +105,13 @@ ALTER TABLE `tasks`
 -- AUTO_INCREMENT for table `sub_tasks`
 --
 ALTER TABLE `sub_tasks`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tasks`
 --
 ALTER TABLE `tasks`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
